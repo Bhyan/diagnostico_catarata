@@ -12,7 +12,7 @@ all: lib app
 lib: $(LIB)/Imagem.o
 
 app: \
-	$(BIN)/main \
+	$(BIN)/catarata \
 	$(TEST)/cunit_main
 
 $(LIB)/%.o: $(LIB)/%.c $(INCLUDE)/%.h
@@ -25,9 +25,9 @@ $(TEST)/%: $(TEST)/%.c
 	gcc $< -lcunit $(LIB)/*.o -I $(INCLUDE) $(FLAGS) -o $@
 
 run:
-	$(BIN)/main
+	$(BIN)/catarata -i imagem.ppm -f ppm -o diagnostico.txt
 
-test:
+teste:
 	$(TEST)/cunit_main
 
 clean:
