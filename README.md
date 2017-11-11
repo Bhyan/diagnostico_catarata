@@ -6,8 +6,8 @@ Norte (UFRN).
 Etapas:
 -------
 
-- [ ] Leitura Imagem
-- [ ] Tranformação em tons de cinza
+- [x] Leitura Imagem
+- [x] Tranformação em tons de cinza
 - [ ] Segmentação das imagens em tons de cinza
 - [ ] Detecção da catarata
 
