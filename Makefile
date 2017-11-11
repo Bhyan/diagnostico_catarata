@@ -3,6 +3,7 @@ LIB = ./lib
 SRC = ./src
 TEST = ./test
 SRC = ./src
+IMG = ./images
 FLAGS = -O3 -Wall -g
 
 
@@ -32,4 +33,5 @@ run:
 clean:
 	rm $(LIB)/*.o
 	rm $(SRC)/catarata
+	rm $(IMG)/cinza.tmp
 #	rm $(TEST)/cunit_main
