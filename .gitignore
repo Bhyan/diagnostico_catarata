@@ -3,3 +3,4 @@ catarata
 /lib/*.o
 *.swp
 *.ppm
+*.tmp
