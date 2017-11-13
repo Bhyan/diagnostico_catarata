@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    if(strcmp(formato, "ppm") == 0){// Auterado para passar e chamar a função.
+    if(strcmp(formato, "ppm") == 0){// Alterado para passar e chamar a função.
         imagem_ppm(nome);
     }
 

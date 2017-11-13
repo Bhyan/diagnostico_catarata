@@ -46,8 +46,6 @@ void imagem_ppm(char *nome){
 
     fclose(imagem);
 
-    escala_cinza(img, linhas, colunas, cor, comentario, cabecalho);
-
 }
 
 void escala_cinza(RGB **img, int linhas, int colunas, int cor, char *comentario, char *cabecalho){
