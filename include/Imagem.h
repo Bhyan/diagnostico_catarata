@@ -7,7 +7,7 @@ typedef struct rgb{
     int blue;
 } RGB;
 
-void imagem_ppm(char *nome_imagem);
+RGB **imagem_ppm(char *nome_imagem);
 
 void escala_cinza(RGB **img, int linhas, int colunas, int cor, char *comentario, char *cabecalho);
 

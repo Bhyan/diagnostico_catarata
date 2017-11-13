@@ -5,6 +5,7 @@
 
 
 int main(int argc, char **argv) {
+    RGB **img;
     int paramentros;
     char nome[25], formato[4], saida[25];
 
@@ -31,7 +32,7 @@ int main(int argc, char **argv) {
                     break;
                 case 'o':
                     snprintf(saida, 25, "%s", optarg); 
-                    break;
+                   break;
                 case 'h':
                     printf("-i   <input-image>\n"
                             "-f   <input-image-format>\n"
@@ -43,7 +44,7 @@ int main(int argc, char **argv) {
     }
 
     if(strcmp(formato, "ppm") == 0){// Alterado para passar e chamar a função.
-        imagem_ppm(nome);
+        img = imagem_ppm(nome);
     }
 
     return 0;

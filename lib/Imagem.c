@@ -3,7 +3,7 @@
 #include "Imagem.h"
 
 
-void imagem_ppm(char *nome){
+RGB **imagem_ppm(char *nome){
     FILE *imagem;
     RGB **img;
     int linhas, colunas, cor, i, j;
@@ -45,6 +45,8 @@ void imagem_ppm(char *nome){
     }
 
     fclose(imagem);
+
+    return img;
 
 }
 

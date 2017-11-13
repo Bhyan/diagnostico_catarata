@@ -2,5 +2,4 @@ a.out
 catarata
 /lib/*.o
 *.swp
-*.ppm
 *.tmp
