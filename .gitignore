@@ -4,4 +4,4 @@ catarata
 *.o
 *.swp
 *.tmp
-./test/cunit_imagem
+cunit_imagem
