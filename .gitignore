@@ -1,5 +1,7 @@
 a.out
 catarata
-/lib/*.o
+*.ppm
+*.o
 *.swp
 *.tmp
+./test/cunit_imagem

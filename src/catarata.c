@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv) {
     RGB **img;
-    int paramentros;
+    int paramentros, linhas, colunas;
     char nome[25], formato[4], saida[25];
 
     if(argc == 1){ //Caso o usuário rode o programa sem nenhum parâmetro sera retornado o help.
@@ -44,7 +44,8 @@ int main(int argc, char **argv) {
     }
 
     if(strcmp(formato, "ppm") == 0){// Alterado para passar e chamar a função.
-        img = imagem_ppm(nome);
+        img = imagem_ppm(nome, &linhas, &colunas);
+        escala_cinza(img, &linhas, &colunas);
     }
 
     return 0;
