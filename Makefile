@@ -4,12 +4,15 @@ SRC = ./src
 TEST = ./test
 SRC = ./src
 IMG = ./images
-FLAGS = -O3 -Wall -g
+FLAGS = -O3 -Wall -g -O0
 
 
 all: lib app
 
-lib: $(LIB)/Imagem.o
+lib: \
+	$(LIB)/Imagem.o \
+	$(LIB)/Filtros.o
+	
 
 app: \
 	$(SRC)/catarata \
@@ -33,5 +36,6 @@ teste:
 clean:
 	rm $(LIB)/*.o
 	rm $(SRC)/catarata
-#	rm $(IMG)/cinza.tmp
 	rm $(TEST)/cunit_imagem
+	rm $(IMG)/cinza.ppm
+	rm $(IMG)/gauss.ppm
