@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "Imagem.h"
+#include "Filtros.h"
 
 
 int main(int argc, char **argv) {
@@ -43,9 +44,12 @@ int main(int argc, char **argv) {
         }
     }
 
-    if(strcmp(formato, "ppm") == 0){// Alterado para passar e chamar a função.
+    if(strcmp(formato, "ppm\n") != 0){
         img = imagem_ppm(nome, &linhas, &colunas);
-        escala_cinza(img, &linhas, &colunas);
+        img = escala_cinza(img, &linhas, &colunas);
+        cria_imagem_ppm(img, "./images/cinza.ppm", &linhas, &colunas); // Cria imagem para teste visual.
+        img = filtro_gaussiano(img, &linhas, &colunas);
+        cria_imagem_ppm(img, "./images/gauss.ppm", &linhas, &colunas); // Cria imagem para teste visual.
     }
 
     return 0;
