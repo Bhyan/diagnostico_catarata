@@ -50,7 +50,7 @@ RGB **imagem_ppm(char *nome, int *linhas, int *colunas){
 
 }
 
-void escala_cinza(RGB **img, int *linhas, int *colunas){
+RGB **escala_cinza(RGB **img, int *linhas, int *colunas){
     int cinza, i, j;
 
     for(i = 0; i < *linhas; i ++){
@@ -67,4 +67,30 @@ void escala_cinza(RGB **img, int *linhas, int *colunas){
         }
     }
 
+    return img;
+}
+
+void cria_imagem_ppm(RGB **img, char *nome, int *linhas, int *colunas){
+    FILE *imagem;
+    int i, j;
+
+    imagem = fopen(nome , "w");
+
+    if(imagem == NULL){
+        fprintf(stderr, "Erro na criação da imagem.\n");
+        exit(1);
+    }
+
+    fprintf(imagem, "P3\n"); //Escreve o cabeçalho da imagem de entrada.
+    fprintf(imagem, "# Teste\n"); //Escreve qualquer comentário que existia na imagem original.
+    fprintf(imagem, "%d %d\n", *colunas, *linhas); //Escreve as colunas e as linhas.
+    fprintf(imagem, "255\n"); //Escreve o padrão de cor.
+
+    for(i = 0; i < *linhas; i ++){ //Escreve os pixeis.
+        for(j = 0; j < *colunas; j ++){
+            fprintf(imagem, "%d %d %d\n", img[i][j].red, img[i][j].green, img[i][j].blue);
+        }
+    }
+
+    fclose(imagem);
 }
