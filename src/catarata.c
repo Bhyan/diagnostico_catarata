@@ -50,6 +50,8 @@ int main(int argc, char **argv) {
         cria_imagem_ppm(img, "./images/cinza.ppm", &linhas, &colunas); // Cria imagem para teste visual.
         img = filtro_gaussiano(img, &linhas, &colunas);
         cria_imagem_ppm(img, "./images/gauss.ppm", &linhas, &colunas); // Cria imagem para teste visual.
+        img = filtro_sobel(img, &linhas, &colunas);
+        cria_imagem_ppm(img, "./images/sobel.ppm", &linhas, &colunas);
     }
 
     return 0;
