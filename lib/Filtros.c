@@ -143,7 +143,7 @@ RGB **realce_aresta(RGB **img, int *linhas, int *colunas, int angulo[][*colunas]
                 img[i][j].green = 255;
                 img[i][j].blue = 255;
             }
-            else if (img[i][j].red < 30){
+            else if(img[i][j].red < 30){
                 img[i][j].red = 0;
                 img[i][j].green = 0;
                 img[i][j].blue = 0;
