@@ -47,7 +47,6 @@ RGB **imagem_ppm(char *nome, int *linhas, int *colunas){
     fclose(imagem);
 
     return img;
-
 }
 
 RGB **escala_cinza(RGB **img, int *linhas, int *colunas){
@@ -93,4 +92,26 @@ void cria_imagem_ppm(RGB **img, char *nome, int *linhas, int *colunas){
     }
 
     fclose(imagem);
+}
+
+RGB **alocar_imagem(int *linhas, int *colunas){
+    RGB **img;
+    int i;
+
+    img = malloc(*linhas * sizeof(RGB *)); //Alocando a memória para as linhas da matriz.
+
+    if(img == NULL){ //Teste se ocorreu a alocação de memoria.
+        fprintf(stderr, "Erro ao alocar memória para a imagem.\n");
+        exit(1);
+    }
+
+    for(i = 0; i < *linhas; i ++){ //Alocando a memória para as colunas da matriz.
+        img[i] = malloc(*colunas * sizeof(RGB));
+        if(img[i] == NULL){ //Teste se alocou a memoria para a linha. Testa linha por linha.
+            fprintf(stderr, "Erro ao alocar memória para a coluna[%d] da imagem.\n", i);
+            exit(1);
+        }
+    }
+
+    return img;
 }
