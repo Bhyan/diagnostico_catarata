@@ -4,7 +4,7 @@ SRC = ./src
 TEST = ./test
 SRC = ./src
 IMG = ./images
-FLAGS = -O3 -Wall -g -O0
+FLAGS = -O3 -Wall -g -O0 -lm
 
 
 all: lib app
@@ -28,7 +28,7 @@ $(TEST)/%: $(TEST)/%.c
 	gcc $< -lcunit $(LIB)/*.o -I $(INCLUDE) $(FLAGS) -o $@
 
 run:
-	$(SRC)/catarata -i ./images/Catarata2.ppm -f ppm -o diagnostico.txt
+	$(SRC)/catarata -i ./images/Normal.ppm -f ppm -o diagnostico.txt
 
 teste:
 	$(TEST)/cunit_imagem
@@ -39,3 +39,4 @@ clean:
 	rm $(TEST)/cunit_imagem
 	rm $(IMG)/cinza.ppm
 	rm $(IMG)/gauss.ppm
+	rm $(IMG)/sobel.ppm
