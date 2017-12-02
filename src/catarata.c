@@ -18,11 +18,12 @@ int main(int argc, char **argv) {
     }
 
     else{
-        /*Função da biblioteca unistd. Usada para casar os paramentos -i, -f,
+        /* 
+         * Função da biblioteca unistd. Usada para casar os paramentos -i, -f,
          * -o e o adicional -h para help, assim que casado ele pega o argumento
-         *  utilizando a função snprintf(variável que recebe o argumento, tamanho,
-         *  formato do argumento para leitura, e entrada padrão.
-         */
+         * utilizando a função snprintf(variável que recebe o argumento, tamanho,
+         * formato do argumento para leitura, e entrada padrão.
+        */
         while((paramentros = getopt(argc, argv, "i:f:o:h")) != -1){
             switch(paramentros){
                 case 'i':
@@ -51,7 +52,9 @@ int main(int argc, char **argv) {
         img = filtro_gaussiano(img, &linhas, &colunas);
         cria_imagem_ppm(img, "./images/gauss.ppm", &linhas, &colunas); // Cria imagem para teste visual.
         img = filtro_sobel(img, &linhas, &colunas);
-        cria_imagem_ppm(img, "./images/sobel.ppm", &linhas, &colunas);
+        cria_imagem_ppm(img, "./images/sobel.ppm", &linhas, &colunas); // Cria imagem para teste visual.
+        img = binarizacao(img, &linhas, &colunas);
+        cria_imagem_ppm(img, "./images/binarizada.ppm", &linhas, &colunas); // Cria imagem para teste visual.
     }
 
     return 0;

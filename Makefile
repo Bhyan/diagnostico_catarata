@@ -12,7 +12,6 @@ all: lib app
 lib: \
 	$(LIB)/Imagem.o \
 	$(LIB)/Filtros.o
-	
 
 app: \
 	$(SRC)/catarata \
