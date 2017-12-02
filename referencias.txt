@@ -1,4 +1,14 @@
 #Referencia main.c
 
-Biblioteca unitstd - http://pubs.opengroup.org/onlinepubs/7908799/xsh/unistd.h.html
-Grayscale - https://en.wikipedia.org/wiki/Grayscale
+#Catarata.c
+    Biblioteca unitstd: http://pubs.opengroup.org/onlinepubs/7908799/xsh/unistd.h.html
+#Imagem.c
+    Grayscale: https://en.wikipedia.org/wiki/Grayscale
+    Formato P3: http://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/ppmformat.html
+    Material disponibilizado no pdf do projeto - página 12 - Descrição do formato ppm:
+    http://disciplinas.ist.utl.pt/~leic-cg.daemon/textos/livro/Formatos%20de%20Imagem.pdf
+#Filtros.c
+    Detecção de borda: https://en.wikipedia.org/wiki/Canny_edge_detector
+    Convolução: https://en.wikipedia.org/wiki/Convolution
+    Filtro Gaussiano: https://en.wikipedia.org/wiki/Gaussian_function
+    Filtro de Sobel: https://en.wikipedia.org/wiki/Sobel_operator
